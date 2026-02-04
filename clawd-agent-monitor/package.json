@@ -1,0 +1,9 @@
+{
+  "name": "clawd-agent-monitor",
+  "version": "1.0.0",
+  "description": "Status monitor for Clawd agents with Twitter webhook integration",
+  "private": true,
+  "engines": {
+    "node": ">=18.x"
+  }
+}

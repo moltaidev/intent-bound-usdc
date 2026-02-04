@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clawd Agent Monitor</title>
+    <meta
+      name="description"
+      content="Status monitor for Clawd agents."
+    />
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0b0f1a;
+        --card: #141a2b;
+        --text: #e6eaf2;
+        --muted: #9aa4b2;
+        --accent: #6ee7ff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+          "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        background: var(--bg);
+        color: var(--text);
+      }
+      main {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 64px 24px 80px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 40px;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0 0 24px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid rgba(110, 231, 255, 0.18);
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 10px 30px rgba(5, 10, 20, 0.35);
+      }
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        margin-top: 24px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(110, 231, 255, 0.14);
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .stat span {
+        color: var(--muted);
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .stat strong {
+        font-size: 22px;
+      }
+      .footer {
+        margin-top: 32px;
+        font-size: 13px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="card">
+        <span class="pill">Clawd Agent Monitor</span>
+        <h1>Monitor your agent fleet.</h1>
+        <p>
+          This dashboard will track Clawd agents, Bankr wallet activity, and
+          reinvestment milestones. We’ll wire in live status once data sources
+          are connected.
+        </p>
+        <div class="grid">
+          <div class="stat">
+            <span>Agents online</span>
+            <strong>0</strong>
+          </div>
+          <div class="stat">
+            <span>Bankr balance</span>
+            <strong>—</strong>
+          </div>
+          <div class="stat">
+            <span>Next hardware buy</span>
+            <strong>—</strong>
+          </div>
+          <div class="stat">
+            <span>Pickup location</span>
+            <strong>El Paso, TX</strong>
+          </div>
+        </div>
+        <div class="footer">
+          Deployment scaffold only. We’ll connect live data once the agent is ready.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

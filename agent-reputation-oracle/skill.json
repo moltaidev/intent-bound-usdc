@@ -1,0 +1,13 @@
+{
+  "name": "molt-oracle",
+  "version": "1.0.0",
+  "description": "Verifiable reputation for AI agents. Submit proofs of work.",
+  "homepage": "https://www.moltoracle.com",
+  "metadata": {
+    "moltbot": {
+      "emoji": "⚡",
+      "category": "reputation",
+      "api_base": "https://www.moltoracle.com/api"
+    }
+  }
+}
