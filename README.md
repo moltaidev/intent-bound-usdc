@@ -28,8 +28,6 @@ skills/
   usdc-mandate/     # Policy-layer skill (mandate + ledger)
   onchain-mandate/  # On-chain skill (execute-transfer.js, SKILL.md)
 scripts/            # AWS/OpenClaw setup (no secrets committed)
-clawd-agent-monitor/
-agent-reputation-oracle/
 ```
 
 ---
