@@ -1,13 +1,24 @@
 # Intent-bound USDC — agent-native finance
 
-Two layers for programmable, bounded USDC spending with AI agents:
+**What this is:** A project (not a single skill) that gives you **bounded USDC spending** for AI agents. It has two OpenClaw **skills** + **smart contracts** on Base Sepolia. You can use the policy layer only, the on-chain layer only, or both.
+
+**Two layers:**
 
 | Layer | What it does | Where |
 |-------|----------------|-------|
 | **Policy** | Agent checks user-set rules (cap, whitelist) before any USDC payment; refuses if violated. | [skills/usdc-mandate](skills/usdc-mandate) |
 | **On-chain** | Smart contract enforces cap + allowlist; only the agent can call `executeTransfer`; chain reverts if over mandate. | [contracts](contracts) + [skills/onchain-mandate](skills/onchain-mandate) |
 
-Policy gives fast, flexible rules in the agent; on-chain gives **verifiable** limits even if the agent is compromised.
+Policy = fast, flexible rules in the agent. On-chain = **verifiable** limits even if the agent is compromised.
+
+---
+
+## How it works
+
+1. **You set a mandate** — e.g. “50 USDC per week, these addresses only.” Policy skill stores it in the workspace; on-chain you call `setMandate()` on the contract (owner only).
+2. **You fund** — For on-chain: send USDC to the MandateWallet contract. For policy-only: agent uses its own wallet within mandate rules.
+3. **Agent sends USDC** — Policy skill: agent checks mandate + ledger before each send and refuses if over cap or wrong recipient. On-chain skill: agent calls `executeTransfer(to, amount)`; contract reverts if the transfer would break the mandate.
+4. **Result** — Same rules (cap + whitelist) are enforced in the agent (policy) and/or by the contract (on-chain). Compromised agent still can’t exceed what you set.
 
 ---
 
