@@ -1,4 +1,4 @@
-# CLAWD — Intent-bound USDC for agent-native finance
+# Intent-bound USDC — agent-native finance
 
 Two layers for programmable, bounded USDC spending with AI agents:
 
